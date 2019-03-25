@@ -1,5 +1,6 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
 /**
  * Представление о человеке.
  * <p>
@@ -12,8 +13,17 @@ package ru.avalon.java.dev.j10.labs.models;
  * </ol>
  */
 public class Person {
-
-    /*
+    String name;
+    Address address;
+    Passport passport;
+    
+    public Person(String name, Passport passport, Address address){
+        this.name = name;
+        this.passport = passport;
+        this.address = address;
+    }
+    
+     /*
      * TODO(Студент): Создайте класс Address.
      *
      * 1. Добавте файл в пакет ru.avalon.java.dev.j10.labs.commons.
@@ -47,6 +57,18 @@ public class Person {
      * @return имя человека в виде строки.
      */
     public String getFullName() {
+        
+        if(passport.getName() != null && passport.getSurname() != null && passport.getLastname() != null){
+            return passport.getName() + " " + passport.getSurname() + " " + passport.getLastname();
+        }
+        
+        if(passport.getLastname() == null && passport.getSecondname() !=null){
+            return passport.getName() + " " + passport.getSecondname().charAt(0) + ". " + passport.getSurname();
+        }
+        
+        if(passport.getLastname() == null && passport.getSecondname() == null && passport.getName() != null && passport.getSurname() != null){
+            return passport.getName() + " " + passport.getSurname();
+        }
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
@@ -62,9 +84,11 @@ public class Person {
      * @return адрес регистрации в виде строки.
      */
     public String getAddress() {
+        
+        return address.getCity() + " " + address.getStreet() + " " + address.getHouse();
+        
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
     }
 }

@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 /**
  * Представление о паспортных данных человека.
  * <p>
@@ -15,8 +17,27 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
-
+public class Passport {
+    int serial;
+    String name;
+    String surname;
+    String lastname;
+    String secondname;
+    String birthdate;
+    String issuedate;
+    String issueagency;
+    
+    public Passport(int serial, String name, String surname, String lastname, String secondname, String birthdate, String issuedate, String issueagency){
+        this.serial = serial;
+        this.name = name;
+        this.surname = surname;
+        this.lastname = lastname;
+        this.secondname = secondname;
+        this.birthdate = birthdate;
+        this.issuedate = issuedate;
+        this.issueagency = issueagency;
+    }
+    
     /*
      * TODO(Студент): Закончить определение класса.
      *
@@ -37,4 +58,68 @@ class Passport {
      * 5. Обеспечте возможность использования класса за
      *    пределами пакета.
      */
+
+    public int getSerial() {
+        return serial;
+    }
+
+    public void setSerial(int serial) {
+        this.serial = serial;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getSecondname() {
+        return secondname;
+    }
+
+    public void setSecondname(String secondname) {
+        this.secondname = secondname;
+    }
+
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getIssuedate() {
+        return issuedate;
+    }
+
+    public void setIssuedate(String issuedate) {
+        this.issuedate = issuedate;
+    }
+
+    public String getIssueagency() {
+        return issueagency;
+    }
+
+    public void setIssueagency(String issueagency) {
+        this.issueagency = issueagency;
+    }
 }
